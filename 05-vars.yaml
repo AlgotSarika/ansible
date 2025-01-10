@@ -1,7 +1,11 @@
 - name: variables
   hosts: local
   connection: local
+  vars:
+    COURSE: "Devops with AWS"
+    DURATION: 120HRS
+    TRAINER: sivakumar
   tasks:
   - name: print the variable
     ansible.builtin.debug:
-      msg: "Course is DevOps with aws,  duration is 120hrs, trainer is sivakumar"
+      msg: "Course is {{"COURSE"}},  duration is {{DURATION}}, trainer is {{TRAINER}}"
