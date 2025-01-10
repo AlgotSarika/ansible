@@ -1,0 +1,17 @@
+- name: variables
+  hosts: local
+  connection: local
+  vars: #Play level variables, global variables
+    COURSE: "Devops with AWS"
+    DURATION: 120HRS
+    TRAINER: sivakumar
+  tasks:
+  - name: print the variable
+    vars: #Task level variables,accessible only with in the task. Task variables can override play level variables local variables
+      COURSE: Ansible
+    ansible.builtin.debug:
+      msg: "Course is {{COURSE}},  duration is {{DURATION}}, trainer is {{TRAINER}}"
+
+   - name: print the variable
+    ansible.builtin.debug:
+      msg: "Course is {{COURSE}},  duration is {{DURATION}}, trainer is {{TRAINER}}"
